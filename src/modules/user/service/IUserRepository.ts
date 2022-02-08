@@ -5,4 +5,5 @@ export default interface IUserRepository {
   createUser(data: CreateUserDTO): Promise<PublicUserDTO>;
   getUserByEmail(email: string): Promise<Option<PublicUserDTO>>;
   getUserById(id: number): Promise<Option<PublicUserDTO>>;
+  getAllUsers(): Promise<PublicUserDTO[]>;
 }

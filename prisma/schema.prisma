@@ -13,4 +13,40 @@ model User {
   firstName String
   email String @unique
   password String
+  notes Note[]
+  todos Todo[]
+  projects Project[]
+}
+
+model Note {
+  id Int @id @default(autoincrement())
+  title String
+  content String
+  tags String[]
+  public Boolean @default(false)
+  date String
+  userId Int
+  author    User? @relation(fields: [userId], references: [id])
+
+}
+
+model Todo{
+  id Int @id @default(autoincrement())
+  title String
+  description String
+  date String
+  completed Boolean
+  userId Int
+  owner User? @relation(fields:[userId], references: [id])
+}
+
+model Project{
+  id Int @id @default(autoincrement())
+  name String
+  description String
+  goals String[]
+  members String[]
+  progress Int
+  userId Int
+  owner User? @relation(fields:[userId], references: [id])
 }

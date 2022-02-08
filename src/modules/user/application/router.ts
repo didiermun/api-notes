@@ -8,5 +8,7 @@ export default (cradle: ICradle) => {
 
   router.get('/profile', cradle.authMiddleware.authenticate, cradle.userController.getMyProfile);
 
+  router.get('/users', cradle.userController.getAllUsers);
+
   return router;
 };

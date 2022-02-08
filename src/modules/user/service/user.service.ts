@@ -16,4 +16,8 @@ export default class UserService {
   getUserById(id: number): Promise<Option<PublicUserDTO>> {
     return this.userRepository.getUserById(id);
   }
+
+  getAllUsers(): Promise<PublicUserDTO[]> {
+    return this.userRepository.getAllUsers();
+  }
 }

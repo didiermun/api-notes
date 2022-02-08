@@ -34,6 +34,24 @@ export default class UserController {
     }
   };
 
+  getAllUsers = async (req: Request, res: Response): Promise<unknown> => {
+    try {
+      const users = await this.userService.getAllUsers();
+
+      res.status(200).json(users);
+    } catch (err) {
+      console.log('Unable to get users:', err);
+
+      return res.status(500).json({
+        error: {
+          code: 500,
+          message: 'Server Internal Error',
+          details: 'Unable to get users',
+        },
+      });
+    }
+  };
+
   createAccount = async (req: Request, res: Response): Promise<unknown> => {
     try {
       const createdUser = await this.userService.createUser(req.body);

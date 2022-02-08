@@ -52,4 +52,8 @@ export default class UserRepository implements IUserRepository {
       email,
     };
   }
+
+  async getAllUsers(): Promise<PublicUserDTO[]> {
+    return await prismaClient.user.findMany({});
+  }
 }
