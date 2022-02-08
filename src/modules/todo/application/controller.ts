@@ -8,9 +8,9 @@ export default class TodoController {
   getById = async (req: Request, res: Response): Promise<unknown> => {
     try {
       const id = Number(req.params.id);
-      const todo = await this.TodoService.getTodoById(id);
+      const Todo = await this.TodoService.getTodoById(id);
 
-      if (!todo) {
+      if (!Todo) {
         return res.status(404).json({
           error: {
             code: 404,
@@ -20,7 +20,7 @@ export default class TodoController {
         });
       }
 
-      res.status(200).json(todo);
+      res.status(200).json(Todo);
     } catch (err) {
       console.log('Unable to get profile:', err);
 
@@ -87,13 +87,13 @@ export default class TodoController {
 
       res.status(201).json(createdTodo);
     } catch (err) {
-      console.log('Unable to create todo:', err);
+      console.log('Unable to create Todo:', err);
 
       return res.status(500).json({
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to create account',
+          details: 'Unable to create Todo',
         },
       });
     }
@@ -106,13 +106,13 @@ export default class TodoController {
 
       res.status(201).json(createdTodo);
     } catch (err) {
-      console.log('Unable to update todo:', err);
+      console.log('Unable to update Todo:', err);
 
       return res.status(500).json({
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to update account',
+          details: 'Unable to update Todo',
         },
       });
     }
