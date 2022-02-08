@@ -1,26 +1,26 @@
 import { Request, Response } from 'express';
 import { AuthenticatedUserDTO } from '../../user/dto/user.dto';
-import TodoService from '../service/todo.service';
+import NoteService from '../service/note.service';
 
-export default class TodoController {
-  constructor(private TodoService: TodoService) {}
+export default class NoteController {
+  constructor(private NoteService: NoteService) {}
 
   getById = async (req: Request, res: Response): Promise<unknown> => {
     try {
       const id = Number(req.params.id);
-      const todo = await this.TodoService.getTodoById(id);
+      const Note = await this.NoteService.getNoteById(id);
 
-      if (!todo) {
+      if (!Note) {
         return res.status(404).json({
           error: {
             code: 404,
             message: 'Not Found',
-            details: 'Todo not found',
+            details: 'Note not found',
           },
         });
       }
 
-      res.status(200).json(todo);
+      res.status(200).json(Note);
     } catch (err) {
       console.log('Unable to get profile:', err);
 
@@ -34,22 +34,22 @@ export default class TodoController {
     }
   };
 
-  getTodosByUser = async (req: Request, res: Response): Promise<unknown> => {
+  getNotesByUser = async (req: Request, res: Response): Promise<unknown> => {
     try {
-      const authenticatedTodo = req.requester as AuthenticatedUserDTO;
-      const Todo = await this.TodoService.getTodosByUser(authenticatedTodo.id);
+      const authenticatedNote = req.requester as AuthenticatedUserDTO;
+      const Note = await this.NoteService.getNotesByUser(authenticatedNote.id);
 
-      if (!Todo) {
+      if (!Note) {
         return res.status(404).json({
           error: {
             code: 404,
             message: 'Not Found',
-            details: 'Todo not found',
+            details: 'Note not found',
           },
         });
       }
 
-      res.status(200).json(Todo);
+      res.status(200).json(Note);
     } catch (err) {
       console.log('Unable to get profile:', err);
 
@@ -63,56 +63,56 @@ export default class TodoController {
     }
   };
 
-  getAllTodos = async (req: Request, res: Response): Promise<unknown> => {
+  getAllNotes = async (req: Request, res: Response): Promise<unknown> => {
     try {
-      const Todos = await this.TodoService.getAllTodos();
+      const Notes = await this.NoteService.getAllNotes();
 
-      res.status(200).json(Todos);
+      res.status(200).json(Notes);
     } catch (err) {
-      console.log('Unable to get Todos:', err);
+      console.log('Unable to get Notes:', err);
 
       return res.status(500).json({
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to get Todos',
+          details: 'Unable to get Notes',
         },
       });
     }
   };
 
-  createTodo = async (req: Request, res: Response): Promise<unknown> => {
+  createNote = async (req: Request, res: Response): Promise<unknown> => {
     try {
-      const createdTodo = await this.TodoService.createTodo(req.body);
+      const createdNote = await this.NoteService.createNote(req.body);
 
-      res.status(201).json(createdTodo);
+      res.status(201).json(createdNote);
     } catch (err) {
-      console.log('Unable to create todo:', err);
+      console.log('Unable to create Note:', err);
 
       return res.status(500).json({
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to create account',
+          details: 'Unable to create note',
         },
       });
     }
   };
 
-  updateTodo = async (req: Request, res: Response): Promise<unknown> => {
+  updateNote = async (req: Request, res: Response): Promise<unknown> => {
     try {
-      const authenticatedTodo = req.requester as AuthenticatedUserDTO;
-      const createdTodo = await this.TodoService.updateTodo(authenticatedTodo.id, req.body);
+      const authenticatedNote = req.requester as AuthenticatedUserDTO;
+      const createdNote = await this.NoteService.updateNote(authenticatedNote.id, req.body);
 
-      res.status(201).json(createdTodo);
+      res.status(201).json(createdNote);
     } catch (err) {
-      console.log('Unable to update todo:', err);
+      console.log('Unable to update Note:', err);
 
       return res.status(500).json({
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to update account',
+          details: 'Unable to update note',
         },
       });
     }

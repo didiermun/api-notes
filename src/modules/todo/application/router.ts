@@ -10,7 +10,7 @@ export default (cradle: ICradle) => {
 
   router.get('/todos', cradle.authMiddleware.authenticate, cradle.todoController.getTodosByUser);
 
-  router.get('/todo/:id', cradle.authMiddleware.authenticate, cradle.userController.getAllUsers);
+  router.get('/todo/:id', cradle.authMiddleware.authenticate, cradle.todoController.getById);
 
   return router;
 };

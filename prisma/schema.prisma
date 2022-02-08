@@ -23,7 +23,7 @@ model Note {
   title String
   content String
   tags String[]
-  public Boolean @default(false)
+  isPublic Boolean @default(false)
   date String
   userId Int
   author    User? @relation(fields: [userId], references: [id])
