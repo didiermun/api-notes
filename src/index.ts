@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(API_PREFIX, authRouter(container.cradle));
 app.use(API_PREFIX, userRouter(container.cradle));
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 7000;
 
 app.listen(port, () => {
   console.log(`Application started at port ${port}`);
