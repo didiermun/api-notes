@@ -10,9 +10,9 @@ export default class TodoRepository implements ITodoRepository {
         id,
       },
       data: {
-        completed: data.completed,
-        title: data.title,
         description: data.description,
+        title: data.title,
+        completed: data.completed,
       },
     });
   }
@@ -37,7 +37,7 @@ export default class TodoRepository implements ITodoRepository {
       description,
     };
   }
-  async createTodo({ completed, title, description }: CreateTodoDTO): Promise<PublicTodoDTO> {
+  async createTodo({ completed, description, title }: CreateTodoDTO): Promise<PublicTodoDTO> {
     const createdTodo = await prismaClient.todo.create({
       data: {
         completed,
@@ -49,9 +49,9 @@ export default class TodoRepository implements ITodoRepository {
 
     return {
       id: createdTodo.id,
-      completed,
-      title,
       description,
+      title,
+      completed,
     };
   }
 

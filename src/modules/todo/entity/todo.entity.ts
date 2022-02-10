@@ -1,7 +1,7 @@
-export default interface TodoEntity {
+export default interface NoteEntity {
   id: number;
   title: string;
   description: string;
-  date: string;
   completed: boolean;
+  date: string;
 }

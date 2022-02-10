@@ -4,13 +4,13 @@ import ICradle from '../../../IoC/icradle.interface';
 export default (cradle: ICradle) => {
   const router = Router();
 
-  router.post('/todo', cradle.authMiddleware.authenticate, cradle.todoController.createTodo);
+  router.post('/Note', cradle.authMiddleware.authenticate, cradle.NoteController.createNote);
 
-  router.put('/todo/:id', cradle.authMiddleware.authenticate, cradle.todoController.createTodo);
+  router.put('/Note/:id', cradle.authMiddleware.authenticate, cradle.NoteController.createNote);
 
-  router.get('/todos', cradle.authMiddleware.authenticate, cradle.todoController.getTodosByUser);
+  router.get('/Notes', cradle.authMiddleware.authenticate, cradle.NoteController.getNotesByUser);
 
-  router.get('/todo/:id', cradle.authMiddleware.authenticate, cradle.todoController.getById);
+  router.get('/Note/:id', cradle.authMiddleware.authenticate, cradle.NoteController.getById);
 
   return router;
 };

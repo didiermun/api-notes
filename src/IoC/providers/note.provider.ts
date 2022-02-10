@@ -1,7 +1,7 @@
 import { asClass, AwilixContainer } from 'awilix';
 import NoteController from '../../modules/note/application/controller';
 import NoteMiddleware from '../../modules/note/application/middleware';
-import NoteRepository from '../../modules/note/persistence/todo.repository';
+import NoteRepository from '../../modules/note/persistence/note.repository';
 import NoteService from '../../modules/note/service/note.service';
 
 import ICradle from '../icradle.interface';

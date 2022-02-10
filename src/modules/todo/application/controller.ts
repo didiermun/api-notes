@@ -22,13 +22,13 @@ export default class TodoController {
 
       res.status(200).json(Todo);
     } catch (err) {
-      console.log('Unable to get profile:', err);
+      console.log('Unable to get todo:', err);
 
       return res.status(500).json({
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to get profile',
+          details: 'Unable to get todo',
         },
       });
     }
@@ -51,13 +51,13 @@ export default class TodoController {
 
       res.status(200).json(Todo);
     } catch (err) {
-      console.log('Unable to get profile:', err);
+      console.log('Unable to get todo:', err);
 
       return res.status(500).json({
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to get profile',
+          details: 'Unable to get todo',
         },
       });
     }

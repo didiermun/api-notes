@@ -22,7 +22,7 @@ export default class NoteMiddleware {
         error: {
           code: 400,
           message: 'Bad Request',
-          details: 'Description is required',
+          details: 'Content is required',
         },
       });
     }
