@@ -42,7 +42,7 @@ jobs:
         run: npx prisma migrate deploy
         env:
           DATABASE_URL: postgres://hyevooqphffcok:ae6ccf12539e919e899db4c7b431491410d6e427a3ab25337ebccf5a0b846b39@ec2-18-215-8-186.compute-1.amazonaws.com:5432/d45lsq3o0spe0g
-      - uses: akhileshns/heroku-deploy@v3.4.6
+      - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ab45f143-7dbc-4670-963a-9f3d94df8de1
           heroku_app_name: unots
