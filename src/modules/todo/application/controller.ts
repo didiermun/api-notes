@@ -28,7 +28,7 @@ export default class TodoController {
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to get todo',
+          details: err,
         },
       });
     }
@@ -57,7 +57,7 @@ export default class TodoController {
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to get todo',
+          details: err,
         },
       });
     }
@@ -75,7 +75,7 @@ export default class TodoController {
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to get Todos',
+          details: err,
         },
       });
     }
@@ -93,7 +93,7 @@ export default class TodoController {
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to create Todo',
+          details: err,
         },
       });
     }
@@ -112,7 +112,7 @@ export default class TodoController {
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to update Todo',
+          details: err,
         },
       });
     }

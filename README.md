@@ -24,6 +24,7 @@ npm install
 - Initialize database schema
 ```bash
 npx prisma migrate dev --name "init" --preview-feature
+npx prisma db push --preview-feature
 ```
 
 ## Docker build

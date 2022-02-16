@@ -28,7 +28,7 @@ export default class UserController {
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to get profile',
+          details: err,
         },
       });
     }
@@ -46,7 +46,7 @@ export default class UserController {
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to get users',
+          details: err,
         },
       });
     }
@@ -64,7 +64,7 @@ export default class UserController {
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to create account',
+          details: err,
         },
       });
     }

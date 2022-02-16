@@ -28,7 +28,7 @@ export default class NoteController {
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to get profile',
+          details: err,
         },
       });
     }
@@ -57,7 +57,7 @@ export default class NoteController {
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to get profile',
+          details: err,
         },
       });
     }
@@ -75,7 +75,7 @@ export default class NoteController {
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to get Notes',
+          details: err,
         },
       });
     }
@@ -93,7 +93,7 @@ export default class NoteController {
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to create note',
+          details: err,
         },
       });
     }
@@ -112,7 +112,7 @@ export default class NoteController {
         error: {
           code: 500,
           message: 'Server Internal Error',
-          details: 'Unable to update note',
+          details: err,
         },
       });
     }
