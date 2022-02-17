@@ -83,7 +83,8 @@ export default class NoteController {
 
   createNote = async (req: Request, res: Response): Promise<unknown> => {
     try {
-      const createdNote = await this.NoteService.createNote(req.body);
+      const authenticatedNote = req.requester as AuthenticatedUserDTO;
+      const createdNote = await this.NoteService.createNote(authenticatedNote.id, req.body);
 
       res.status(201).json(createdNote);
     } catch (err) {

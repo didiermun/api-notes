@@ -39,9 +39,10 @@ export default class NoteRepository implements INoteRepository {
       content,
     };
   }
-  async createNote({ isPublic, content, title, tags }: CreateNoteDTO): Promise<PublicNoteDTO> {
+  async createNote(id: number, { isPublic, content, title, tags }: CreateNoteDTO): Promise<PublicNoteDTO> {
     const createdNote = await prismaClient.note.create({
       data: {
+        userId: id,
         isPublic,
         title,
         content,

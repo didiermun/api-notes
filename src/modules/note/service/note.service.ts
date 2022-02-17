@@ -5,8 +5,8 @@ import INoteRepository from './INoteRepository';
 export default class NoteService {
   constructor(private NoteRepository: INoteRepository) {}
 
-  createNote(data: CreateNoteDTO): Promise<PublicNoteDTO> {
-    return this.NoteRepository.createNote(data);
+  createNote(id: number, data: CreateNoteDTO): Promise<PublicNoteDTO> {
+    return this.NoteRepository.createNote(id, data);
   }
 
   updateNote(id: number, data: CreateNoteDTO): Promise<PublicNoteDTO> {

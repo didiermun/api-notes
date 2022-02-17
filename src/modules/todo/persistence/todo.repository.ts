@@ -37,11 +37,12 @@ export default class TodoRepository implements ITodoRepository {
       description,
     };
   }
-  async createTodo({ completed, description, title }: CreateTodoDTO): Promise<PublicTodoDTO> {
+  async createTodo(id: number, { completed, description, title }: CreateTodoDTO): Promise<PublicTodoDTO> {
     const createdTodo = await prismaClient.todo.create({
       data: {
         completed,
         title,
+        userId: id,
         description,
         date: this.getDate(),
       },

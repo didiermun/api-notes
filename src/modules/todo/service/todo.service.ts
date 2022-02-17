@@ -5,8 +5,8 @@ import ITodoRepository from './ITodoRepository';
 export default class TodoService {
   constructor(private TodoRepository: ITodoRepository) {}
 
-  createTodo(data: CreateTodoDTO): Promise<PublicTodoDTO> {
-    return this.TodoRepository.createTodo(data);
+  createTodo(id: number, data: CreateTodoDTO): Promise<PublicTodoDTO> {
+    return this.TodoRepository.createTodo(id, data);
   }
 
   updateTodo(id: number, data: CreateTodoDTO): Promise<PublicTodoDTO> {

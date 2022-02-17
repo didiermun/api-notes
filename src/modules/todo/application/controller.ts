@@ -83,7 +83,8 @@ export default class TodoController {
 
   createTodo = async (req: Request, res: Response): Promise<unknown> => {
     try {
-      const createdTodo = await this.TodoService.createTodo(req.body);
+      const authenticatedTodo = req.requester as AuthenticatedUserDTO;
+      const createdTodo = await this.TodoService.createTodo(authenticatedTodo.id, req.body);
 
       res.status(201).json(createdTodo);
     } catch (err) {
