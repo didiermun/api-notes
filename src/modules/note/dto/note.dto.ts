@@ -7,4 +7,4 @@ export interface CreateNoteDTO {
   date: string;
 }
 
-export type PublicNoteDTO = Omit<NoteEntity, 'date'>;
+export type PublicNoteDTO = NoteEntity;
