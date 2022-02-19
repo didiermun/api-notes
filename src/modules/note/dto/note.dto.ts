@@ -7,4 +7,9 @@ export interface CreateNoteDTO {
   date: string;
 }
 
+export interface AddTagDTO {
+  noteId: number;
+  tag: string;
+}
+
 export type PublicNoteDTO = NoteEntity;

@@ -4,6 +4,7 @@ import { CreateNoteDTO, PublicNoteDTO } from '../dto/note.dto';
 export default interface INoteRepository {
   createNote(id: number, data: CreateNoteDTO): Promise<PublicNoteDTO>;
   updateNote(id: number, data: CreateNoteDTO): Promise<PublicNoteDTO>;
+  addTag(id: number, tag: string): Promise<PublicNoteDTO>;
   getNoteById(id: number): Promise<Option<PublicNoteDTO>>;
   getAllNotes(): Promise<PublicNoteDTO[]>;
   getNotesByUser(userId: number): Promise<PublicNoteDTO[]>;

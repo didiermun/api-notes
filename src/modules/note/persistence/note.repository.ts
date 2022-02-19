@@ -1,9 +1,23 @@
 import prismaClient from '../../common/persistence/prisma-client';
 import Option from '../../common/types/Option.type';
 import { CreateNoteDTO, PublicNoteDTO } from '../dto/note.dto';
+import noteEntity from '../entity/note.entity';
 import INoteRepository from '../service/INoteRepository';
 
 export default class NoteRepository implements INoteRepository {
+  async addTag(id: number, tag: string): Promise<noteEntity> {
+    const note = await prismaClient.note.findFirst({
+      where: { id },
+    });
+    const tags = note?.tags || [];
+    return await prismaClient.note.update({
+      where: { id },
+      data: {
+        tags: [...tags, tag],
+      },
+    });
+
+  }
   async updateNote(id: number, data: CreateNoteDTO): Promise<PublicNoteDTO> {
     return await prismaClient.note.update({
       where: {

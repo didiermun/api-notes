@@ -8,6 +8,8 @@ export default (cradle: ICradle) => {
 
   router.put('/note/:id', cradle.authMiddleware.authenticate, cradle.NoteController.createNote);
 
+  router.put('/note/tags/add', cradle.authMiddleware.authenticate, cradle.NoteController.addTag);
+
   router.get('/notes', cradle.authMiddleware.authenticate, cradle.NoteController.getNotesByUser);
 
   router.get('/note/:id', cradle.authMiddleware.authenticate, cradle.NoteController.getById);

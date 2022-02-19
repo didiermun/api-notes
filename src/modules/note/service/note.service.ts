@@ -9,6 +9,10 @@ export default class NoteService {
     return this.NoteRepository.createNote(id, data);
   }
 
+  addTag(id: number, tag: string): Promise<PublicNoteDTO> {
+    return this.NoteRepository.addTag(id, tag);
+  }
+
   updateNote(id: number, data: CreateNoteDTO): Promise<PublicNoteDTO> {
     return this.NoteRepository.updateNote(id, data);
   }

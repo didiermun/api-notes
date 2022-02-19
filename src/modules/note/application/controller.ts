@@ -34,6 +34,37 @@ export default class NoteController {
     }
   };
 
+  addTag = async (req: Request, res: Response): Promise<unknown> => {
+    try {
+      const id = Number(req.body.noteId);
+      const Note = await this.NoteService.getNoteById(id);
+
+      if (!Note) {
+        return res.status(404).json({
+          error: {
+            code: 404,
+            message: 'Not Found',
+            details: 'Note not found',
+          },
+        });
+      }
+
+      const tagAdded = await this.NoteService.addTag(id, req.body.tag);
+
+      res.status(200).json(Note);
+    } catch (err) {
+      console.log('Unable to get profile:', err);
+
+      return res.status(500).json({
+        error: {
+          code: 500,
+          message: 'Server Internal Error',
+          details: err,
+        },
+      });
+    }
+  };
+
   getNotesByUser = async (req: Request, res: Response): Promise<unknown> => {
     try {
       const authenticatedNote = req.requester as AuthenticatedUserDTO;
