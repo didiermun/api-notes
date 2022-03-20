@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@prisma/client': 3.10.0
+  '@prisma/client': 3.11.0
   '@types/bcryptjs': 2.4.2
   '@types/cors': 2.8.12
   '@types/express': 4.17.13
@@ -18,12 +18,12 @@ specifiers:
   express: 4.17.3
   jsonwebtoken: 8.5.1
   prettier: 2.5.1
-  prisma: 3.10.0
+  prisma: 3.11.0
   ts-node-dev: 1.1.8
   typescript: 4.5.5
 
 dependencies:
-  '@prisma/client': 3.10.0_prisma@3.10.0
+  '@prisma/client': 3.11.0_prisma@3.11.0
   awilix: 6.1.0
   bcryptjs: 2.4.3
   body-parser: 1.19.2
@@ -42,7 +42,7 @@ devDependencies:
   eslint-config-prettier: 8.5.0_eslint@8.11.0
   eslint-plugin-prettier: 4.0.0_c9d5adccfd1d43a8805a302169f6a967
   prettier: 2.5.1
-  prisma: 3.10.0
+  prisma: 3.11.0
   ts-node-dev: 1.1.8_typescript@4.5.5
   typescript: 4.5.5
 
@@ -98,8 +98,8 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  /@prisma/client/3.10.0_prisma@3.10.0:
-    resolution: {integrity: sha512-6P4sV7WFuODSfSoSEzCH1qfmWMrCUBk1LIIuTbQf6m1LI/IOpLN4lnqGDmgiBGprEzuWobnGLfe9YsXLn0inrg==}
+  /@prisma/client/3.11.0_prisma@3.11.0:
+    resolution: {integrity: sha512-d42o/tlalaWMmNOR4r5BiR6YYTYEV82eZ2lNKOm5ht3WyYwI9e+zy2MyZnNO4Fx5e08RAhW+GRVcEgKl5faUaQ==}
     engines: {node: '>=12.6'}
     requiresBuild: true
     peerDependencies:
@@ -108,16 +108,16 @@ packages:
       prisma:
         optional: true
     dependencies:
-      '@prisma/engines-version': 3.10.0-50.73e60b76d394f8d37d8ebd1f8918c79029f0db86
-      prisma: 3.10.0
+      '@prisma/engines-version': 3.11.0-48.b371888aaf8f51357c7457d836b86d12da91658b
+      prisma: 3.11.0
     dev: false
 
-  /@prisma/engines-version/3.10.0-50.73e60b76d394f8d37d8ebd1f8918c79029f0db86:
-    resolution: {integrity: sha512-cVYs5gyQH/qyut24hUvDznCfPrWiNMKNfPb9WmEoiU6ihlkscIbCfkmuKTtspVLWRdl0LqjYEC7vfnPv17HWhw==}
+  /@prisma/engines-version/3.11.0-48.b371888aaf8f51357c7457d836b86d12da91658b:
+    resolution: {integrity: sha512-bhMW1XybXZyqCf+9QqjP7Oi7xgVHcISVyOZNMm51qeZsy12M1RtHaCcXUFeMMV0JOCZZuPFVr3+0KVpQqK35CQ==}
     dev: false
 
-  /@prisma/engines/3.10.0-50.73e60b76d394f8d37d8ebd1f8918c79029f0db86:
-    resolution: {integrity: sha512-LjRssaWu9w2SrXitofnutRIyURI7l0veQYIALz7uY4shygM9nMcK3omXcObRm7TAcw3Z+9ytfK1B+ySOsOesxQ==}
+  /@prisma/engines/3.11.0-48.b371888aaf8f51357c7457d836b86d12da91658b:
+    resolution: {integrity: sha512-m9iZd5F5vP6A2IvKWfHpOO/qK8OOO9nbsV/pdyEkF/1WNe0E8SIWFBKb+HcMLkG9OFbDDBy8QItXmp/mIULuwQ==}
     requiresBuild: true
     dev: true
 
@@ -1339,13 +1339,13 @@ packages:
     hasBin: true
     dev: true
 
-  /prisma/3.10.0:
-    resolution: {integrity: sha512-dAld12vtwdz9Rz01nOjmnXe+vHana5PSog8t0XGgLemKsUVsaupYpr74AHaS3s78SaTS5s2HOghnJF+jn91ZrA==}
+  /prisma/3.11.0:
+    resolution: {integrity: sha512-8SdsLPhKR3mOfoo2o73h9mNn3v5kA/RqGA26Sv6qDS78Eh2uepPqt5e8/nwj5EOblYm5HEGuitaXQrOCLb6uTw==}
     engines: {node: '>=12.6'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@prisma/engines': 3.10.0-50.73e60b76d394f8d37d8ebd1f8918c79029f0db86
+      '@prisma/engines': 3.11.0-48.b371888aaf8f51357c7457d836b86d12da91658b
     dev: true
 
   /proxy-addr/2.0.7:
