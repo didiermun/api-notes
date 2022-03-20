@@ -24,7 +24,7 @@ jobs:
     env:
       DATABASE_URL: postgresql://postgres:postgres@localhost:5432/notes
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '14.x'
@@ -36,7 +36,7 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' # Only deploy main
     needs: test
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: yarn install --only=production --ignore-scripts
       - name: Run production migration
         run: npx prisma migrate deploy
