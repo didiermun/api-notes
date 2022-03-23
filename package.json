@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@prisma/client": "3.11.0",
-    "awilix": "6.1.0",
+    "awilix": "7.0.1",
     "bcryptjs": "2.4.3",
     "body-parser": "1.19.2",
     "cors": "2.8.5",
