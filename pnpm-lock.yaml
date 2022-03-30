@@ -8,7 +8,7 @@ specifiers:
   '@types/jsonwebtoken': 8.5.8
   '@typescript-eslint/eslint-plugin': 5.13.0
   '@typescript-eslint/parser': 5.13.0
-  awilix: 6.1.0
+  awilix: 7.0.1
   bcryptjs: 2.4.3
   body-parser: 1.19.2
   cors: 2.8.5
@@ -24,7 +24,7 @@ specifiers:
 
 dependencies:
   '@prisma/client': 3.11.0_prisma@3.11.0
-  awilix: 6.1.0
+  awilix: 7.0.1
   bcryptjs: 2.4.3
   body-parser: 1.19.2
   cors: 2.8.5
@@ -394,8 +394,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /awilix/6.1.0:
-    resolution: {integrity: sha512-hFT47lS6t4eHoZ4ddojmoab2eDjBK9OyVDANFHaSLkFW4kJVlL4AE4O7oE4lX6FW8RveAbAyAfHQ7Ar9re15Xw==}
+  /awilix/7.0.1:
+    resolution: {integrity: sha512-ya9l28+Csj3pNguJEzK+JMuohL3GBB23wAW0V0dkVzI6WgtOA3kcnFOlhnBTFFMVSW4VQ3QWcHfZm8ABWZySUQ==}
     engines: {node: '>=12.0.0'}
     dependencies:
       camel-case: 4.1.2
