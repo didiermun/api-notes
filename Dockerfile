@@ -1,4 +1,4 @@
-FROM node:17.7.2-alpine As build-stage
+FROM node:17.8.0-alpine As build-stage
 
 # Create app directory
 WORKDIR /app
@@ -12,7 +12,7 @@ COPY . .
 
 RUN npm run build
 
-FROM node:17.7.2-alpine as production-stage
+FROM node:17.8.0-alpine as production-stage
 
 # Copy necessary files
 COPY --from=build-stage /app/node_modules ./node_modules
